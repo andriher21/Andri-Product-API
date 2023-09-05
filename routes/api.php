@@ -15,12 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::post(uri:'register', action:RegisterController::class);
 Route::post('login', \App\Http\Controllers\Api\Auth\LoginController::class);
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/checklist', function (Request $request) {
     return $request->user();
 });
+Route::middleware('auth:sanctum')->post('/checklist', );
